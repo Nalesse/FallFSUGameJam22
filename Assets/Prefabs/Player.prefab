@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8396619031612718472}
   - component: {fileID: 8396619031612718475}
   - component: {fileID: 8396619031612718516}
+  - component: {fileID: 5497230199873399409}
   - component: {fileID: 8396619031612718517}
   m_Layer: 0
   m_Name: Player
@@ -93,7 +94,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8396619031612718474}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 19196a6ed1bf5ff409d21344bdc47d1f, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -113,6 +114,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 8
   smoothInputSpeed: 0.1
+--- !u!114 &5497230199873399409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396619031612718474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a87b9ab75611d94fb8773a2a66f5cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &8396619031612718517
 Rigidbody:
   m_ObjectHideFlags: 0

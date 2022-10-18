@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private PlayerActionMap playerActionMap;
     private InputAction movement;
-    private Rigidbody rb;
+    public Rigidbody Rb { get; private set; }
 
     private Vector2 currentInputVector;
     private Vector2 smoothInputVelocity;
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         playerActionMap = new PlayerActionMap();
-        rb = GetComponent<Rigidbody>();
+        Rb = GetComponent<Rigidbody>();
     }
 
     private void OnEnable()
@@ -45,7 +45,13 @@ public class PlayerMovement : MonoBehaviour
         Vector3 direction = new Vector3(currentInputVector.x, 0, currentInputVector.y);
         
         // Moves the player
-        rb.MovePosition(rb.position + direction * (movementSpeed * Time.deltaTime));
+        //Rb.MovePosition(Rb.position + direction * (movementSpeed * Time.fixedDeltaTime));
+        
+        if (direction != Vector3.zero)
+        {
+            Rb.velocity = direction * (movementSpeed);
+        }
+        
 
     }
 }
