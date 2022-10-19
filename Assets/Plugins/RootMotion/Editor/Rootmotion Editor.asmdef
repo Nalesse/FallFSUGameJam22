@@ -1,0 +1,17 @@
+{
+    "name": "RootmotionEditor",
+    "references": [
+        "GUID:07627eb8b34860b498e5eff2b38ae211"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

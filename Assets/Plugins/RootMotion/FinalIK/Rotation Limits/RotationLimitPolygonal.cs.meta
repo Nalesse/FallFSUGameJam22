@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 7caeb28f31ca5f7499e543086ab49b8c
+labels:
+- Turrets
+- RotationLimits
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 03a93cc74a1364909b1ddd071896ad75, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
