@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Production/MainMenu.unity
+    path: Assets/DeerWalk/Scenes/Production/MainMenu.unity
     guid: 94fbd13d9f0a0ae4f947c53e4ab8b2c4
   - enabled: 1
-    path: Assets/Scenes/Production/MainScene.unity
+    path: Assets/DeerWalk/Scenes/Production/MainScene.unity
     guid: 93e697eee3225c74ebd65afc01f51bc1
   m_configObjects: {}
