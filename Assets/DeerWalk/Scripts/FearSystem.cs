@@ -11,6 +11,8 @@ public class FearSystem: MonoBehaviour
     private int maxVelocity = 7;
     private bool triggerFearIncrease = true;
 
+    private IEnumerator fearCoroutine;
+
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -20,20 +22,50 @@ public class FearSystem: MonoBehaviour
     {
         if (playerMovement.Rb.velocity.z > maxVelocity && triggerFearIncrease)
         {
-            StartCoroutine(AddFear());
+            triggerFearIncrease = true;
+
+            if (fearCoroutine == null)
+            {
+                fearCoroutine = ChangeFearLevel();
+                StartCoroutine(fearCoroutine);
+            }
+        }
+        else
+        {
+            triggerFearIncrease = false;
         }
 
-        if (currentFearLevel < maxFear) return;
+        if (currentFearLevel >= maxFear)
+        {
+            DoFearAction();
+        }
+
+        if (fearCoroutine != null && currentFearLevel <= 0)
+        {
+            StopCoroutine(fearCoroutine);
+            fearCoroutine = null;
+        }
         
-        GameEvents.MaxFearReached.Invoke();
-        currentFearLevel = 0;
     }
 
-    private IEnumerator AddFear()
+    private void DoFearAction()
     {
-        currentFearLevel++;
-        triggerFearIncrease = false;
-        yield return new WaitForSeconds(1);
-        triggerFearIncrease = true;
+        GameEvents.MaxFearReached.Invoke();
+
+    }
+
+    private IEnumerator ChangeFearLevel() //we also need to decrease fear somehow, so let's just fold it in
+    {
+        while (triggerFearIncrease)
+        {
+            currentFearLevel++;
+            yield return new WaitForSeconds(1);
+        }
+
+        while (!triggerFearIncrease && currentFearLevel > 0)
+        {
+            currentFearLevel--;
+            yield return new WaitForSeconds(1);
+        }
     }
 }
