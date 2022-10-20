@@ -1,17 +1,11 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace UI
+namespace DeerWalk.Scripts.UI
 {
 
     public class MainMenu : MonoBehaviour
     {
         [SerializeField] private GameObject settingsScreen;
-        
-        public void ChangeScene(int buildIndex)
-        {
-            SceneManager.LoadScene(buildIndex, LoadSceneMode.Single);
-        }
 
         public void QuitGame()
         {
