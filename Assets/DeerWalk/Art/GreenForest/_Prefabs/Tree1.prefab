@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 33463206233210374}
   - component: {fileID: 23084524858069022}
   - component: {fileID: 95085564227879946}
-  m_Layer: 0
+  - component: {fileID: 3280925412278571214}
+  m_Layer: 6
   m_Name: Tree1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,3 +106,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &3280925412278571214
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449644707152252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2025115, y: 14.672346, z: 1.1971939}
+  m_Center: {x: -0.009608746, y: 7.0957146, z: -0.11172177}
