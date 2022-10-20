@@ -20,7 +20,7 @@ public class FearSystem: MonoBehaviour
 
     private void Update()
     {
-        if (playerMovement.Rb.velocity.z > maxVelocity && triggerFearIncrease)
+        if (playerMovement.Rb.velocity.z > maxVelocity)
         {
             triggerFearIncrease = true;
 
