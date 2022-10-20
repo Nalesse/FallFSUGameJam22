@@ -64,6 +64,10 @@ public class FearSystem: MonoBehaviour
 
         while (!triggerFearIncrease && currentFearLevel > 0)
         {
+            if (currentFearLevel > maxFear)
+            {
+                currentFearLevel = maxFear;
+            }
             currentFearLevel--;
             yield return new WaitForSeconds(1);
         }
