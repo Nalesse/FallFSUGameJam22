@@ -48,7 +48,7 @@ MonoBehaviour:
   foldout: 1
   followDistance: 5
   stoppingRadius: 4
-  clearAheadDistance: 10
+  clearAheadDistance: 3
   clearAheadRadius: 5
 --- !u!114 &-2999268187860745135
 MonoBehaviour:
