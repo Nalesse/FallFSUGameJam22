@@ -6,6 +6,7 @@ namespace DeerWalk.Scripts.UI
     public class MainMenu : MonoBehaviour
     {
         [SerializeField] private GameObject settingsScreen;
+        [SerializeField] private AudioSource audioSource;
 
         public void QuitGame()
         {
