@@ -23,6 +23,6 @@ public class CameraFollow : MonoBehaviour
 
         cameraTransform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, Time.smoothDeltaTime);
 
-        transform.LookAt
+        transform.LookAt(followTarget);
     }
 }
