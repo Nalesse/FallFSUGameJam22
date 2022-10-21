@@ -19,4 +19,10 @@ public class HerdMember : MonoBehaviour
     {
         Debug.Log("Deer Runs away");
     }
+
+    private void DeathAction()
+    {
+        GameManager.Instance.NumberOfHerdAlive -= 1;
+        Destroy(this.gameObject);
+    }
 }
