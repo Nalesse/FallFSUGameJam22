@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4884628963280076}
   - component: {fileID: 33754108930835762}
   - component: {fileID: 23287504562246514}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PineBrunchMesh
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 33699714505366668}
   - component: {fileID: 23487459743670650}
   - component: {fileID: 95301439976351390}
-  m_Layer: 0
+  - component: {fileID: 950957635377242136}
+  m_Layer: 6
   m_Name: Rock1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,3 +105,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &950957635377242136
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835165246915658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.052644, y: 6.299431, z: 8.108954}
+  m_Center: {x: -0.0000009536743, y: 3.1419826, z: -0.00000047683716}

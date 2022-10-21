@@ -6,8 +6,8 @@ using UnityEngine;
 public class FearSystem: MonoBehaviour
 {
     private PlayerMovement playerMovement;
-    private int currentFearLevel;
-    private int maxFear = 10;
+    public int currentFearLevel;
+    public int maxFear = 10;
     private int maxVelocity = 7;
     private bool triggerFearIncrease = true;
 

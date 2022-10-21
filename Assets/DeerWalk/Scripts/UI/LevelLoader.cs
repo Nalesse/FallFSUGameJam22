@@ -13,11 +13,13 @@ namespace DeerWalk.Scripts.UI
 
         public void LoadNextLevel(int buildIndex)
         {
+            Debug.Log("Load level triggered");
             StartCoroutine(LoadLevel(buildIndex));
         }
 
         IEnumerator LoadLevel(int buildIndex)
         {
+            Time.timeScale = 1f;
             transition.SetTrigger(StartFade);
             yield return new WaitForSeconds(transitionTime);
             SceneManager.LoadScene(buildIndex);

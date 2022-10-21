@@ -11,4 +11,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/DeerWalk/Scenes/Production/MainScene.unity
     guid: 93e697eee3225c74ebd65afc01f51bc1
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: ee950e9b75203434187e74f248c2db0a, type: 2}
