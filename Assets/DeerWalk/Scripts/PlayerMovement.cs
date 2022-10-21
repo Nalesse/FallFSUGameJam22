@@ -38,10 +38,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private bool isRunning = false;
+    private bool isMoving;
 
     //Inspector vars
     [SerializeField] private float movementSpeed;
     [SerializeField] private float smoothInputSpeed = .2f;
+    private static readonly int Moving = Animator.StringToHash("Moving");
 
     private void Awake()
     {
@@ -68,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         isRunning = running.IsPressed();
+        isMoving = movement.IsPressed();
 
         Vector2 input = movement.ReadValue<Vector2>();
         //Smooths the movement
@@ -82,16 +85,19 @@ public class PlayerMovement : MonoBehaviour
         if (direction != Vector3.zero)
         {
             Rb.velocity = direction * (movementSpeed * (isRunning ? 2f : 1f));
-            animator.SetBool("Moving", true);
+            //animator.SetBool(Moving, true);
         }
         else
         {
-            animator.SetBool("Moving", false);
+            //animator.SetBool(Moving, false);
         }
+
+        animator.SetBool(Moving, isMoving);
 
         animator.SetFloat("MoveX", Mathf.Clamp01(currentInputVector.x) * (isRunning ? 2f : 1f));
         animator.SetFloat("MoveY", Mathf.Clamp01(currentInputVector.y) * (isRunning ? 2f : 1f));
     }
+    
 
     private void LateUpdate()
     {
