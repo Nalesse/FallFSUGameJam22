@@ -10,8 +10,19 @@ public class HerdMember : MonoBehaviour
         GameEvents.MaxFearReached.AddListener(MaxFearAction);
     }
 
+    private void Start()
+    {
+        GameManager.Instance.NumberOfHerdAlive += 1;
+    }
+
     private void MaxFearAction()
     {
         Debug.Log("Deer Runs away");
+    }
+
+    private void DeathAction()
+    {
+        GameManager.Instance.NumberOfHerdAlive -= 1;
+        Destroy(this.gameObject);
     }
 }

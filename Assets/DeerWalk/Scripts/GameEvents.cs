@@ -8,5 +8,10 @@ public static class GameEvents
     /// <summary>
     /// When the max fear level is reached this event is triggered
     /// </summary>
-    public static readonly UnityEvent MaxFearReached = new UnityEvent();
+    public static readonly UnityEvent MaxFearReached = new();
+
+    /// <summary>
+    /// triggered when 
+    /// </summary>
+    public static readonly UnityEvent WinState = new();
 }
