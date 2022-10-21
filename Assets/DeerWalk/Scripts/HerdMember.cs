@@ -2,12 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CloudFine.FlockBox;
 
 public class HerdMember : MonoBehaviour
 {
+    private BehaviorSettings followerSettings;
+    public BehaviorSettings panicSettings;
     private void OnEnable()
     {
         GameEvents.MaxFearReached.AddListener(MaxFearAction);
+        followerSettings = GetComponent<PhysicsSteeringAgent>().activeSettings;
+        
     }
 
     private void Start()
@@ -17,7 +22,8 @@ public class HerdMember : MonoBehaviour
 
     private void MaxFearAction()
     {
-        Debug.Log("Deer Runs away");
+        GetComponent<PhysicsSteeringAgent>().activeSettings = panicSettings;
+        Debug.Log($"Deer {name} Runs away");
     }
 
     private void DeathAction()

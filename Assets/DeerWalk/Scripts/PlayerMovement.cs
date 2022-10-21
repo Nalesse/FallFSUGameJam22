@@ -11,8 +11,10 @@ public class PlayerMovement : MonoBehaviour
     private PlayerActionMap playerActionMap;
     private InputAction movement;
     private InputAction running;
+    private InputAction cameraCtrl;
     public Rigidbody Rb { get; private set; }
 
+    private Vector2 cameraDelta = Vector2.zero;
     private Vector2 currentInputVector;
     private Vector2 smoothInputVelocity;
 
@@ -53,6 +55,9 @@ public class PlayerMovement : MonoBehaviour
 
         running = playerActionMap.Player.Run;
         running.Enable();
+
+        cameraCtrl = playerActionMap.Player.CameraControl;
+        cameraCtrl.Enable();
     }
     private void OnDisable()
     {
@@ -85,5 +90,15 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("MoveX", Mathf.Clamp01(currentInputVector.x) * (isRunning ? 2f : 1f));
         animator.SetFloat("MoveY", Mathf.Clamp01(currentInputVector.y) * (isRunning ? 2f : 1f));
+    }
+
+    private void LateUpdate()
+    {
+        cameraDelta = cameraCtrl.ReadValue<Vector2>();
+    }
+
+    public Vector2 GetPlayerCamMovement()
+    {
+        return cameraDelta;
     }
 }
