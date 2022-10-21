@@ -5,26 +5,30 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    private Transform cameraTransform;
+    [SerializeField] private Transform cameraTransform;
     private Vector3 velocity = Vector3.zero;
 
-    [SerializeField] private GameObject followTarget;
-    [SerializeField] private Vector3 camOffset;
+    [SerializeField] private Vector3 cameraDistance;
+    [SerializeField] private Vector3 cameraOffset;
+    private GameObject targetLook;
     private PlayerMovement pMovement;
     private void Start()
     {
-        pMovement = followTarget.gameObject.GetComponent<PlayerMovement>();
-        cameraTransform = transform;
-        camOffset = cameraTransform.position - followTarget.transform.position;
+        pMovement = gameObject.GetComponent<PlayerMovement>();
+        cameraDistance = cameraTransform.position - transform.position;
+        targetLook = new GameObject();
+        Instantiate(targetLook);
     }
 
     private void LateUpdate()
     {
-        Vector3 targetPos = followTarget.transform.position + camOffset;
-        Vector3 targetRot = new Vector3(0f,pMovement.GetPlayerCamMovement().y,pMovement.GetPlayerCamMovement().y);
-        cameraTransform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, Time.smoothDeltaTime);
+        Vector3 targetPos = transform.position + cameraDistance;
+        Vector3 targetRot = pMovement.GetPlayerCamMovement();
+        cameraTransform.position = Vector3.SmoothDamp(cameraTransform.transform.position, targetPos, ref velocity, Time.smoothDeltaTime);
 
-        transform.Rotate(targetRot);
-        transform.LookAt(followTarget.transform);
+        cameraTransform.transform.Rotate(targetRot);
+
+        targetLook.transform.position = transform.position + cameraOffset;
+        cameraTransform.transform.LookAt(targetLook.transform);
     }
 }

@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private InputAction cameraCtrl;
     public Rigidbody Rb { get; private set; }
 
+    
     private Vector2 cameraDelta = Vector2.zero;
     private Vector2 currentInputVector;
     private Vector2 smoothInputVelocity;
@@ -105,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector2 GetPlayerCamMovement()
     {
+        Debug.Log($"Camera delta: {cameraDelta}");
         return cameraDelta;
     }
 }
