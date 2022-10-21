@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4630285213415220}
   - component: {fileID: 33918232056116778}
   - component: {fileID: 23057544200486116}
-  m_Layer: 0
+  - component: {fileID: 4489986795201623419}
+  m_Layer: 6
   m_Name: Oak3Dry
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4489986795201623419
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301084003993602}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.520239, y: 18.98433, z: 7.6044383}
+  m_Center: {x: 4.3134165, y: 6.466076, z: 1.9985979}
