@@ -46073,6 +46073,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4285402713992346, guid: 2be77bb4f428b5a478f1c6db20ca830c, type: 3}
   m_PrefabInstance: {fileID: 1133185988}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1134081893 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3060395246023783504, guid: 15c8dba2a83adbb4d8882ca7180f24b3, type: 3}
+  m_PrefabInstance: {fileID: 242331601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1134429297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80638,6 +80643,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9097107916569163426, guid: e4d8ceb1dc7280446a70771a0be65eeb, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 1134081893}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4d8ceb1dc7280446a70771a0be65eeb, type: 3}
 --- !u!1001 &1971437169
