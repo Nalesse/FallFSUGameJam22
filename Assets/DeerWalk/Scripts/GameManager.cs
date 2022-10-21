@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    public int NumberOfHerdAlive { get; set; }
+    [field: SerializeField] public int NumberOfHerdAlive { get; set; }
     public static GameManager Instance { get; private set; }
     private bool gamOverTrigger = true;
     private void Awake() 
