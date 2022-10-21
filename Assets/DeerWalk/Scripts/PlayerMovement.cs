@@ -106,7 +106,6 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector2 GetPlayerCamMovement()
     {
-        Debug.Log($"Camera delta: {cameraDelta}");
         return cameraDelta;
     }
 }
